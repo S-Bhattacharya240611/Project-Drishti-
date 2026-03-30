@@ -1,0 +1,5 @@
+{
+  "name": "Drishti Assist",
+  "description": "An offline, real-time assistive vision system for visually impaired users, optimized for Indian street environments.",
+  "requestFramePermissions": ["camera"]
+}
