@@ -7,9 +7,10 @@ import { AudioEngine } from '../lib/audio';
 interface CameraViewProps {
   isActive: boolean;
   onStatusChange: (status: string) => void;
+  language: 'en-IN' | 'hi-IN';
 }
 
-export const CameraView: React.FC<CameraViewProps> = ({ isActive, onStatusChange }) => {
+export const CameraView: React.FC<CameraViewProps> = ({ isActive, onStatusChange, language }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isReady, setIsReady] = useState(false);
@@ -40,6 +41,11 @@ export const CameraView: React.FC<CameraViewProps> = ({ isActive, onStatusChange
       }
     };
   }, []);
+
+  useEffect(() => {
+    engineRefs.current.audio.setLanguage(language);
+    engineRefs.current.decision?.setLanguage(language);
+  }, [language]);
 
   useEffect(() => {
     let stream: MediaStream | null = null;

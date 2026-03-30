@@ -28,7 +28,12 @@ export class ObjectTracker {
     'bicycle': 'bicycle',
     'stop sign': 'traffic sign',
     'fire hydrant': 'obstacle',
-    // We would add custom classes here for potholes, autos, etc. if using a custom model
+    'bench': 'obstacle',
+    'potted plant': 'obstacle',
+    'chair': 'obstacle',
+    'dog': 'animal',
+    'cow': 'animal',
+    // In a custom model, we'd add 'auto-rickshaw', 'rickshaw', 'pothole'
   };
 
   private readonly RELEVANT_CLASSES = Object.keys(this.CLASS_MAPPING);
