@@ -8,7 +8,15 @@ This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/e4f679db-7a07-43fc-8162-f31bce5ee21e
 
-## Run Locally
+## Deployment
+
+This project is configured to automatically deploy to GitHub Pages via GitHub Actions.
+To enable this:
+1. Go to your repository settings on GitHub.
+2. Navigate to **Pages** in the sidebar.
+3. Under **Build and deployment**, change the **Source** from "Deploy from a branch" to **GitHub Actions**.
+4. The site will then automatically build and deploy whenever you push to the `main` branch.
+
 
 **Prerequisites:**  Node.js
 
