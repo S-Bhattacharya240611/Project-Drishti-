@@ -14,6 +14,11 @@ export default function App() {
 
   useEffect(() => {
     // Check initial permissions
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      setHasPermissions(false);
+      return;
+    }
+    
     navigator.mediaDevices.getUserMedia({ video: true })
       .then(stream => {
         setHasPermissions(true);

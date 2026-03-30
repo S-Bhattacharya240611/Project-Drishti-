@@ -47,6 +47,11 @@ export const CameraView: React.FC<CameraViewProps> = ({ isActive, onStatusChange
     const startCamera = async () => {
       if (!isActive || !isReady || !videoRef.current) return;
 
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        onStatusChange('Camera access is not supported or requires a secure context (HTTPS).');
+        return;
+      }
+
       try {
         onStatusChange('Starting camera...');
         stream = await navigator.mediaDevices.getUserMedia({
